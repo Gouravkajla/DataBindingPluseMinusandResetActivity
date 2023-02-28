@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="intValue"
+            type="Integer" />
+        <variable
+            name="activity"
+            type="com.gaurav.databindingtask.MainActivity" />
+        
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:paddingTop="100dp">
+
+
+<Button
+    android:layout_width="50dp"
+    android:layout_height="60dp"
+    android:text="-"
+    android:textSize="30dp"
+    android:id="@+id/btnMinus"
+    android:layout_marginStart="30dp"
+    android:onClick="@{()->activity.onClickMinus()}"
+    />
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:text="+"
+        android:textSize="30dp"
+        android:id="@+id/btnAdd"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+        android:onClick="@{()->activity.onClickAdd()}"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{intValue.toString()}"
+        android:layout_toEndOf="@id/btnMinus"
+        tools:text="0"
+        android:textSize="30sp"
+        android:layout_marginStart="125dp"
+        android:id="@+id/tvAddMinus"
+
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAddMinus"
+        android:layout_centerInParent="true"
+        android:text="Reset"
+        android:layout_marginTop="20dp"
+        android:onClick="@{()->activity.onClickReset()}"
+        />
+
+
+
+</RelativeLayout>
+</layout>
